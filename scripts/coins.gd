@@ -1,7 +1,7 @@
 extends Node
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	pass
 	# TODO: Check if the object that touched the coin is the player
 	
