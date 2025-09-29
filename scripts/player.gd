@@ -43,16 +43,16 @@ func _physics_process(_delta):
 	elif xDirection < 0:
 		facing = "left"
 	if yDirection < 0:
-		facing = "back"
+		facing = "up"
 	elif yDirection > 0:
 		facing = "down"
 		
-		update_animation()
+	update_animation()
 		
 	
 
 		
-	_animation_player.play("idle_" + facing)
+	
 	# TODO: Update facing direction based on movement
 	# Use if statements to check xDirection and yDirection
 	# Set facing to "right", "left", "down", or "up"
@@ -70,7 +70,8 @@ func _physics_process(_delta):
 func update_animation():
 	if xDirection == 0 && yDirection == 0:
 		_animation_player.play("idle_" + facing)
-	# Use: _animation_player.play("idle_" + facing)
+	else:
+		_animation_player.play("walk_"+facing)# Use: _animation_player.play("idle_" + facing)
 	# This combines "idle_" with whatever direction we're facing
 	pass
 
