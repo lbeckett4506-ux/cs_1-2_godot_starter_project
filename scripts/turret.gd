@@ -1,5 +1,9 @@
 extends CharacterBody2D
-
+var projectile_original = preload("res://scenes/enemy_projectile.tscn")
+var start_time = 2
+var timer = start_time
+var in_range = false
+var player
 
 func _ready():
 	
