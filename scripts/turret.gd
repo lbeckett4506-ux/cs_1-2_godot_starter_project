@@ -5,11 +5,20 @@ var timer = start_time
 var in_range = false
 var player
 
-func _ready():
+func _ready
+():
+
 	
 	pass
 
 func _process(delta: float) -> void:
+	if in_range:
+		timer = delta
+	if timer <0:
+		shoot(player.position)
+		timer = start_time
+	
+	
 	pass
 
 
