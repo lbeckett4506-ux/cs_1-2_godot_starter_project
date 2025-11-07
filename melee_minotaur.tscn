@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://ysyr2oqtui2b"]
+
+[ext_resource type="PackedScene" uid="uid://ddq1bkyn8j1by" path="res://scenes/melee_minotaur.tscn" id="1_2blwl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2blwl"]
+radius = 42.190044
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fdvjx"]
+radius = 87.005745
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3xil1"]
+radius = 139.03236
+
+[node name="MeleeMinotaur" instance=ExtResource("1_2blwl")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 0)
+disabled = false
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, -2)
+scale = Vector2(1, 0.96875)
+
+[node name="melee" type="Area2D" parent="." index="2"]
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="melee" index="0"]
+shape = SubResource("CircleShape2D_2blwl")
+
+[node name="chase" type="Area2D" parent="." index="3"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="chase" index="0"]
+shape = SubResource("CircleShape2D_fdvjx")
+
+[node name="shoot" type="Area2D" parent="." index="4"]
+
+[node name="CollisionShape2d3" type="CollisionShape2D" parent="shoot" index="0"]
+shape = SubResource("CircleShape2D_3xil1")
