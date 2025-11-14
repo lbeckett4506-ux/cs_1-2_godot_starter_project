@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://ddq1bkyn8j1by"]
+[gd_scene load_steps=133 format=3 uid="uid://ddq1bkyn8j1by"]
 
 [ext_resource type="Texture2D" uid="uid://busa5myjbwb4i" path="res://sprites/Download38899.png" id="1_nohjn"]
 [ext_resource type="Script" uid="uid://di404qslpnp8m" path="res://scenes/melee_minotaur.gd" id="1_vltjp"]
@@ -1003,19 +1003,42 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vltjp"]
+radius = 42.579338
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_adppo"]
+radius = 91.26884
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uk8e4"]
+radius = 143.2236
+
 [node name="MeleeMinotaur" type="CharacterBody2D"]
 script = ExtResource("1_vltjp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 7)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_adppo")
-disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, 2)
+position = Vector2(0, -2.000001)
+scale = Vector2(1, 0.9375)
 sprite_frames = SubResource("SpriteFrames_xx5td")
 animation = &"crossbow_shoot_right"
 autoplay = "crossbow_shoot_right"
 frame = 7
 frame_progress = 0.985295
+
+[node name="melee" type="Area2D" parent="."]
+
+[node name="melee" type="CollisionShape2D" parent="melee"]
+shape = SubResource("CircleShape2D_vltjp")
+
+[node name="shoot" type="Area2D" parent="."]
+
+[node name="shoot" type="CollisionShape2D" parent="shoot"]
+shape = SubResource("CircleShape2D_adppo")
+
+[node name="chase" type="Area2D" parent="."]
+
+[node name="chase" type="CollisionShape2D" parent="chase"]
+shape = SubResource("CircleShape2D_uk8e4")

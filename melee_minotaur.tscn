@@ -12,6 +12,7 @@ radius = 87.005745
 radius = 139.03236
 
 [node name="MeleeMinotaur" instance=ExtResource("1_2blwl")]
+script = null
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, 0)
@@ -20,18 +21,21 @@ disabled = false
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(0, -2)
 scale = Vector2(1, 0.96875)
+animation = &"crossbow_walk_down"
+frame = 0
+frame_progress = 0.0
 
 [node name="melee" type="Area2D" parent="." index="2"]
 
 [node name="CollisionShape2D1" type="CollisionShape2D" parent="melee" index="0"]
 shape = SubResource("CircleShape2D_2blwl")
 
-[node name="chase" type="Area2D" parent="." index="3"]
+[node name="shoot" type="Area2D" parent="." index="3"]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="chase" index="0"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="shoot" index="0"]
 shape = SubResource("CircleShape2D_fdvjx")
 
-[node name="shoot" type="Area2D" parent="." index="4"]
+[node name="chase" type="Area2D" parent="." index="4"]
 
-[node name="CollisionShape2d3" type="CollisionShape2D" parent="shoot" index="0"]
+[node name="CollisionShape2d3" type="CollisionShape2D" parent="chase" index="0"]
 shape = SubResource("CircleShape2D_3xil1")
